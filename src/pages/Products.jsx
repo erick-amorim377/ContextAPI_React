@@ -1,14 +1,14 @@
 import { useContext } from 'react'
 import { CounterContext } from '../context/CounterContext'
 
-const About = () => {
+const Products = () => {
   const {counter} = useContext(CounterContext);
   return (
     <>
-      <div>About</div>
+      <div>Products</div>
       <p>Valor do contador: {counter}</p>
     </>
   )
 }
 
-export default About
+export default Products

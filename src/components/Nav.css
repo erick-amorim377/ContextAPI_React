@@ -1,0 +1,13 @@
+a{
+    margin: 30px;
+    color: azure;
+    text-decoration: none;
+    border: solid azure 1px;
+    border-radius: 10px ;
+    padding: 3px;
+
+}
+a:hover{
+    background-color: aliceblue;
+    color: black ;
+}

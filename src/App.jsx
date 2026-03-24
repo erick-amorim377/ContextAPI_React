@@ -5,6 +5,7 @@ import Nav from './components/Nav'
 import Home from './pages/Home'
 import About from './pages/About';
 import NotFound from './pages/NotFound';
+import Products from './pages/Products';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
+          <Route path='/products' element={<Products />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
       </BrowserRouter>
