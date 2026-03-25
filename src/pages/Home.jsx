@@ -1,9 +1,7 @@
 import ChangeCounter from '../components/ChangeCounter';
-import {CounterContext} from '../context/CounterContext'
-import { useContext } from 'react'
-
+import { useCounterContext } from '../hook/useCounterContext';
 const Home = () => {
-  const {counter} = useContext(CounterContext);
+  const {counter} = useCounterContext();
 
   return (
     <>    

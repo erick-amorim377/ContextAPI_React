@@ -9,6 +9,12 @@ const ChangeCounter = () => {
         <button onClick={()=> setCounter(counter + 1)}>
             Add value to counter
         </button>
+        <button onClick={()=> setCounter(0)}>
+            reset counter
+        </button>
+        <button onClick={()=> setCounter(counter +5)}>
+            Add value to counter +5
+        </button>
     </div>
   )
 }
