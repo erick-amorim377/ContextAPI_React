@@ -54,6 +54,9 @@ body {
   margin: 0;
   padding: 20px;
 }
+button{
+  color: black;
+}
 
 #root {
   width: 1126px;
