@@ -1,16 +1,119 @@
-# React + Vite
+# ContextAPI React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projeto de aprendizado criado para praticar o uso da **React Context API** em uma aplicacao simples com multiplas paginas. A proposta aqui e entender como compartilhar estados globais entre componentes sem precisar passar props manualmente por varios niveis da arvore.
 
-Currently, two official plugins are available:
+## Sobre o projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Esta aplicacao demonstra dois cenarios comuns de uso da Context API:
 
-## React Compiler
+- **Controle de contador global** com `useState`
+- **Mudanca global de cor de titulo/texto** com `useReducer`
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+O projeto possui navegacao entre paginas com `React Router`, e o estado compartilhado continua disponivel em diferentes rotas como `Home`, `About` e `Products`.
 
-## Expanding the ESLint configuration
+## O que foi praticado
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Criacao de contextos com `createContext`
+- Encapsulamento da aplicacao com Providers
+- Compartilhamento de estado global entre paginas
+- Criacao de hooks customizados para consumir contexto
+- Uso de `useState` e `useReducer` dentro de contextos
+- Navegacao com `react-router-dom`
+
+## Estrutura principal
+
+Os arquivos mais importantes para entender o projeto sao:
+
+- `src/context/CounterContext.jsx`: cria o contexto do contador e disponibiliza `counter` e `setCounter`
+- `src/context/TitleColorContext.jsx`: cria o contexto de cor e usa `useReducer` para trocar a cor
+- `src/hook/useCounterContext.jsx`: hook customizado para consumir o contexto do contador
+- `src/hook/useTitleColorContext.jsx`: hook customizado para consumir o contexto da cor
+- `src/components/ChangeCounter.jsx`: componente que altera o contador global
+- `src/main.jsx`: ponto onde os Providers envolvem a aplicacao
+
+## Stacks e ferramentas usadas
+
+- **React 19**
+- **Vite**
+- **JavaScript (ES Modules)**
+- **React Router DOM**
+- **Context API**
+- **ESLint**
+
+## Como funciona na pratica
+
+Na pagina inicial, o usuario pode:
+
+- Incrementar o contador
+- Resetar o contador
+- Somar `+5` ao contador
+- Alterar a cor do texto entre vermelho e azul
+
+Essas mudancas ficam disponiveis tambem nas outras paginas, mostrando que o estado esta centralizado nos contextos e nao apenas em um componente isolado.
+
+## Como rodar no seu PC
+
+### 1. Clone o repositorio
+
+```bash
+git clone <url-do-repositorio>
+```
+
+### 2. Entre na pasta do projeto
+
+Se a estrutura continuar igual a este repositorio:
+
+```bash
+cd ContextAPI_React/ContextAPI_React
+```
+
+### 3. Instale as dependencias
+
+```bash
+npm install
+```
+
+### 4. Inicie o servidor de desenvolvimento
+
+```bash
+npm run dev
+```
+
+Depois disso, abra no navegador o endereco exibido no terminal, normalmente algo como:
+
+```bash
+http://localhost:5173
+```
+
+## Outros comandos uteis
+
+```bash
+npm run build
+```
+
+Gera a versao de producao do projeto.
+
+```bash
+npm run preview
+```
+
+Permite visualizar localmente a versao de producao.
+
+```bash
+npm run lint
+```
+
+Executa a analise de codigo com ESLint.
+
+## Objetivo de estudo
+
+Este projeto e indicado para quem esta aprendendo:
+
+- gerenciamento de estado global no React
+- organizacao com Context API
+- separacao entre contexto, provider e hooks customizados
+- compartilhamento de dados entre paginas
+
+## Autor
+
+Projeto desenvolvido para fins de estudo sobre **React Context API**.
